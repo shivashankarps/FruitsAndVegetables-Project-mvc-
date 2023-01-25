@@ -1,0 +1,34 @@
+﻿@model List<MvcProjectTask.Models.FruitsAndVegetables>
+@{ 
+    ViewBag.Title = "Index"; 
+}
+
+<h2>Index</h2>
+
+
+<div class="row">
+    <div class="col-md-11">
+        <table class="table table-condensed table-hover">
+            <tr><td>Id</td><td>ProductName</td><td>Price</td><td>Quantity</td><td>Discount</td><td>TotalPrice</td><td>Category</td> <td>PackSize</td>            </tr>
+            @foreach (var p in Model)
+            {
+                <tr><td>@p.Id</td><td>@p.ProductName</td><td>@p.Price</td><td>@p.Quantity</td><td>@p.Discount</td><td>@p.TotalPrice</td><td>@p.Category</td>  <td>@p.PackSize</td>               </tr>
+            }
+
+
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@Html.ActionLink(p.ProductName, "Details", "FAV", new { id = p.Id }, null)</td>
+                    <td> @Html.ActionLink("Edit", "Edit", "FAV", new { id = p.Id }, new { @class = "btn btn-info" }) </td>
+                   
+                </tr>
+            }
+
+
+
+        </table>
+    </div>
+</div>
+

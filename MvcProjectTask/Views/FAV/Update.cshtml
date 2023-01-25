@@ -1,0 +1,51 @@
+﻿@using MvcProjectTask.Models
+@model FruitsAndVegetables
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+
+
+<hr />
+@using (Html.BeginForm())
+{<div class="mb-2">
+        @Html.LabelFor(p => p.ProductName, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.ProductName, new { @class = "form-control" })
+    </div><div class="mb-2">
+        @Html.LabelFor(p => p.Price, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.Price, new { @class = "form-control" })
+    </div><div class="mb-2">
+        @Html.LabelFor(p => p.Quantity, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.Quantity, new { @class = "form-control" })
+
+    </div> <div class="mb-2">
+        @Html.LabelFor(p => p.PackSize, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.PackSize, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.PackSize)
+
+
+    </div><div class="mb-2">
+        @Html.LabelFor(p => p.Discount, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.Discount, new { @class = "form-control" })
+
+    </div><div class="mb-2">
+        @Html.LabelFor(p => p.TotalPrice, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.TotalPrice, new { @class = "form-control" })
+
+        @*<div class="mb-2">
+                @Html.LabelFor(p => p.Category, new { @class = "form-label" })
+                @Html.DropDownListFor(p => p.CategoryId, new SelectList(ViewBag.Categories, "Id", "CategoryName"), "--Select--", new { @class = "form-select" })
+
+            </div>*@
+
+    </div><div class="mb-2">
+        @Html.LabelFor(p => p.Category, new { @class = "form-label" })
+        @Html.DropDownListFor(P => P.Category, new SelectList(Enum.GetValues(typeof(Catrgory1))), "--Select--", new { @class = "form-control" })
+
+    @*</div><div class="mb-2">
+        @Html.LabelFor(p => p.PackSize, new { @class = "form-label" })
+        @Html.DropDownListFor(P => P.PackSize, new SelectList(Enum.GetValues(typeof(PackSize1))), "--Select--", new { @class = "form-control" })*@
+
+    </div><div class="mt-2"><input type="submit" id="btnadd" class="btn btn-primary" value="add" /></div>
+}

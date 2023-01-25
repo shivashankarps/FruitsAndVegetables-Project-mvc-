@@ -1,0 +1,60 @@
+﻿@model MvcProjectTask.Models.FruitsAndVegetables
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm())
+{
+
+    <div class="mb-2">
+        @Html.LabelFor(p => p.Id, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.Id, new { @class = "form-control", @disabled = "disabled" })
+        @Html.ValidationMessageFor(p => p.Id)
+    </div>
+
+
+
+    <div class="mb-2">
+        @Html.LabelFor(p => p.ProductName, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.ProductName, new { @class = "form-control", @disabled = "disabled" })
+        @Html.ValidationMessageFor(p => p.ProductName)
+    </div>
+    <div class="mb-2">
+        @Html.LabelFor(p => p.Price, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.Price, new { @class = "form-control", })
+        @Html.ValidationMessageFor(p => p.Price)
+    </div> <div class="mb-2">
+        @Html.LabelFor(p => p.Quantity, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.Quantity, new { @class = "form-control", })
+        @Html.ValidationMessageFor(p => p.Quantity)
+
+
+    </div> <div class="mb-2">
+        @Html.LabelFor(p => p.PackSize, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.PackSize, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.PackSize)
+
+    </div> <div class="mb-2">
+        @Html.LabelFor(p => p.Discount, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.Discount, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.Discount)
+    </div> <div class="mb-2">
+        @Html.LabelFor(p => p.TotalPrice, new { @class = "form-label" })
+        @Html.TextBoxFor(p => p.TotalPrice, new { @class = "form-control" })
+        @Html.ValidationMessageFor(p => p.TotalPrice)
+
+
+    </div><div class="mb-2">
+        @Html.LabelFor(p => p.Category, new { @class = "form-label" })
+        @Html.DropDownListFor(P => P.Category, new SelectList(Enum.GetValues(typeof(Catrgory1))), "--Select--", new { @class = "form-control", @disabled = "disabled" })
+
+
+
+    </div> <div class="mt-2">
+        <input type="submit" id="btnSubit" class="btn btn-outline-success"  value="Update" />
+        @Html.ActionLink("Go Back", "Index", "Movie", new { @class = "btn btn-outline-primary" })
+    </div>}
+
+
+
